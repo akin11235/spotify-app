@@ -28,15 +28,6 @@ export class SearchResultComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.subscription = this._musicDataService
-    //   .searchArtists(this.searchQuery)
-    //   .subscribe(
-    //     (data) => (
-    //       (this.results = data.artists.items),
-    //       console.log('Searchquery results', this.results)
-    //     )
-    //   );
-
     this.subscription = this._musicDataService
       .searchArtists(this.searchQuery)
       .subscribe(
@@ -50,3 +41,14 @@ export class SearchResultComponent implements OnInit {
       );
   }
 }
+
+
+    // this.subscription = this._musicDataService
+    //   .searchArtists(this.searchQuery)
+    //   .subscribe(
+    //     (data) => (
+    //       (this.results = data.artists.items),
+    //       console.log('Searchquery results', this.results)
+    //     )
+    //   );
+
