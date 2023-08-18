@@ -14,7 +14,7 @@ import { Observable, Subscription } from 'rxjs';
   ],
 })
 export class FavouritesComponent implements OnInit {
-  public favourites: Array<any> = []
+  public favourites: Array<any> = [];
   public id: any;
 
   constructor(private _musicDataService: MusicDataService) {}

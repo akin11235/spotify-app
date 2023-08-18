@@ -140,7 +140,6 @@ export class MusicDataService {
       return this.spotifyToken.getBearerToken().pipe(
         mergeMap((token) => {
           let ids = this.favouritesList.join();
-          // var ids = this.favouritesList.join('');
           return this.http.get<any>(
             `https://api.spotify.com/v1/tracks?ids=${ids}`,
             { headers: { Authorization: `Bearer ${token}` } }
