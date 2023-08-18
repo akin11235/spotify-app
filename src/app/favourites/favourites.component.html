@@ -1,4 +1,4 @@
-<h1>Favourites</h1>
+<h1>Favourites {{ favourites }}</h1>
 <p>
   The following is a list of your favourite songs from various artists.<br />
   Click the &nbsp;<mat-icon mat-list-icon>queue_music</mat-icon>&nbsp; icon to
@@ -7,28 +7,43 @@
 
 <br />
 
-
-<mat-list *ngFor="let track of favourites">
-  <!-- single "favourite" card -->
-  <mat-list-item>
+<div *ngFor="let track of favourites">
+  <div>
     <mat-icon mat-list-icon>queue_music</mat-icon>
+  </div>
+  <mat-list>
+    <!-- single "favourite" card -->
+
     <div mat-line>
       <mat-card>
-        <mat-card-content
-          ><strong>Track Name</strong> - Track Duration<br /><br />
-          Artist(s):
-          <span><a routerLink="/artist">{{track.name}}</a>&nbsp;&nbsp;</span>
-          <span><a routerLink="/artist">Possible Artist 2 {{track.name}}</a>&nbsp;&nbsp;</span>
+        <mat-card-content>
+          <mat-list-item>
+            <strong>{{ track.name }}</strong> - Track Duration{{
+              track.duration_ms
+            }}
+          </mat-list-item>
+          <mat-list-item>
+            Artist(s):
+            <a routerLink="/artist/{{ track.artists[0].id }}">{{
+              track.artists[0].name
+            }}</a></mat-list-item
+          >
+          <!-- <mat-list-item><a routerLink="/artist"></a></mat-list-item> -->
 
-          <br />
+          <mat-list-item>
+            Album:
+            <a routerLink="/album/{{ track.album.id }}">
+              {{ track.album.name }}</a
+            >
+          </mat-list-item>
 
-          Album: <a routerLink="/album"> Album Name</a><br />
           <div *ngIf="track.preview_url">
-            <br /><audio controls [src]="track.preview_url"></audio>
+            <audio controls [src]="track.preview_url"></audio>
           </div>
         </mat-card-content>
       </mat-card>
     </div>
-  </mat-list-item>
-  <!-- -->
-</mat-list>
+
+    <!-- -->
+  </mat-list>
+</div>

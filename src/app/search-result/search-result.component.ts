@@ -10,7 +10,7 @@ import { MusicDataService } from '../music-data.service';
 })
 export class SearchResultComponent implements OnInit {
   public results: any;
-  public searchQuery: string = ''
+  public searchQuery: string = '';
   public searchString: string | undefined;
 
   public subscription!: Subscription;
@@ -22,7 +22,7 @@ export class SearchResultComponent implements OnInit {
     // this.route.queryParams.subscribe((data: Params) => console.log(data));
     this.route.queryParams.subscribe(
       (data) => (
-        (this.searchQuery = data['query']), console.log(this.searchQuery)
+        (this.searchQuery = data['q']), console.log(this.searchQuery)
       )
     );
   }
@@ -31,24 +31,29 @@ export class SearchResultComponent implements OnInit {
     this.subscription = this._musicDataService
       .searchArtists(this.searchQuery)
       .subscribe(
-        (data) =>
+        (data) =>{
           (this.results = data.artists.items.filter(
-            (curValue, _index, self) =>
-              self.findIndex(
-                (t) => t.images.length === curValue.images.length
-              ) > 0
-          ))
+            (item) => item.images.length > 0
+          )); console.log('search artists',this.results)}
       );
   }
 }
 
+// this.subscription = this._musicDataService
+//   .searchArtists(this.searchQuery)
+//   .subscribe(
+//     (data) =>
+//       (this.results = data.artists.items.filter(
+//         (curValue, _index, self) =>
+//           self.findIndex((t) => t.images.length === curValue.images.length) > 0
+//       ))
+//   );
 
-    // this.subscription = this._musicDataService
-    //   .searchArtists(this.searchQuery)
-    //   .subscribe(
-    //     (data) => (
-    //       (this.results = data.artists.items),
-    //       console.log('Searchquery results', this.results)
-    //     )
-    //   );
-
+// this.subscription = this._musicDataService
+//   .searchArtists(this.searchQuery)
+//   .subscribe(
+//     (data) => (
+//       (this.results = data.artists.items),
+//       console.log('Searchquery results', this.results)
+//     )
+//   );

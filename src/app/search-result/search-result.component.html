@@ -1,6 +1,6 @@
 <!-- <h1>Results for: &ldquo;Some Query&rdquo;</h1> -->
 
-<h1>Results for:{{ results.name }}</h1>
+<h1>Results for:{{ searchQuery }}</h1>
 
 <p>
   The following is a list of artists matching the query.<br />
@@ -12,25 +12,22 @@
 <div class="content">
   <div fxLayout="row wrap" fxLayout.xs="column">
     <!-- single result "card"-->
-    <div fxFlex [style.margin]="'20px'">
-      <mat-card
-        [style.min-width]="'200px'"
-        *ngFor="let result of results.items"
-      >
+    <div fxFlex [style.margin]="'20px'" *ngFor="let result of results">
+      <mat-card [style.m-width]="'200px'">
         <mat-card-header>
           <mat-card-title>{{ result.name }}</mat-card-title>
-          <mat-card-subtitle>Artist</mat-card-subtitle>
+          <mat-card-subtitle>Artist </mat-card-subtitle>
         </mat-card-header>
         <img
-          routerLink="/artist/{{ result.name }}"
+          routerLink="/artist/{{ result.id }}"
           mat-card-image
           class="album-cover"
-          src="Some Artist's Image"
+          src="{{ result.images[1].url }}"
           alt="artist art"
         />
         <mat-card-content>
-          <strong>Followers: </strong>Total followers for Some Artist<br />
-          <strong>Popularity: </strong>Popularity for Some Artist
+          <strong>Followers: </strong>{{ result.followers.total }}<br />
+          <strong>Popularity: </strong>{{ result.popularity }}
         </mat-card-content>
       </mat-card>
     </div>

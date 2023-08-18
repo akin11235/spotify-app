@@ -104,15 +104,11 @@ export class MusicDataService {
   // a success
   // In progress
   addToFavourites(id: any): any {
-    this.favouritesList.push(id);
-    if (
-      id === undefined ||
-      id === null ||
-      this.favouritesList.length >= 50
-    ) {
+    // this.favouritesList.push(id);
+    if (id === null || id === undefined || this.favouritesList.length >= 50) {
       return false;
     } else {
-      // this.favouritesList.push(id);
+      this.favouritesList.push(id);
       return true;
     }
   }
@@ -124,7 +120,7 @@ export class MusicDataService {
   // HINT: Elements can be searched for and removed from an array using a combination of Array.indexOf() and
   // Array.splice()
   removeFromFavourites(id: any): Observable<any> {
-    this.favouritesList.splice(this.favouritesList.indexOf(id));
+    this.favouritesList.splice(this.favouritesList.indexOf(id), 1);
     return this.getFavourites();
   }
 
@@ -141,12 +137,12 @@ export class MusicDataService {
 
   getFavourites(): Observable<any> {
     if (this.favouritesList.length > 0) {
-      let ids = this.favouritesList.join();
       return this.spotifyToken.getBearerToken().pipe(
         mergeMap((token) => {
+          let ids = this.favouritesList.join();
           // var ids = this.favouritesList.join('');
           return this.http.get<any>(
-            `https://api.spotify.com/v1/tracks?q=${ids}`,
+            `https://api.spotify.com/v1/tracks?ids=${ids}`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
         })
@@ -189,5 +185,3 @@ export class MusicDataService {
   //   );
   // }
 }
-
-

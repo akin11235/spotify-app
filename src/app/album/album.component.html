@@ -55,7 +55,7 @@
 
 <div *ngFor="let item of album.tracks.items" class="flex-container">
   <div class="flex-child">
-    <mat-icon mat-list-icon (click)="onClick()">queue_music</mat-icon>
+    <mat-icon mat-list-icon (click)="onClick(item.id)">queue_music</mat-icon>
   </div>
   <div class="flex-child">
     <mat-card>

@@ -43,6 +43,6 @@ export class NewReleasesComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription1?.unsubscribe();
     this.subscription2?.unsubscribe();
-    this.subscription3?.unsubscribe();
+    // this.subscription3?.unsubscribe();
   }
 }

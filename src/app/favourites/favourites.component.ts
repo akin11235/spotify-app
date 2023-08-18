@@ -14,7 +14,7 @@ import { Observable, Subscription } from 'rxjs';
   ],
 })
 export class FavouritesComponent implements OnInit {
-  public favourites: Array<any> | undefined;
+  public favourites: Array<any> = []
   public id: any;
 
   constructor(private _musicDataService: MusicDataService) {}
@@ -25,14 +25,14 @@ export class FavouritesComponent implements OnInit {
       .getFavourites()
       .subscribe(
         (data) => (
-          (this.favourites = data),
+          (this.favourites = data.tracks),
           console.log('Getting Favourites list', this.favourites)
         )
       );
 
-    this._musicDataService
-      .removeFromFavourites(this.id)
-      .subscribe((data) => ((this.id = data[0]), console.log(this.id)));
-    console.log('Dele21');
+    // this._musicDataService
+    //   .removeFromFavourites(this.id)
+    //   .subscribe((data) => ((this.id = data[0]), console.log(this.id)));
+    // console.log('Dele21');
   }
 }
