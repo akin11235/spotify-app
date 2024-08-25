@@ -22,7 +22,7 @@ The application uses Angular components and services to interact with the Spotif
 2. **Navigate to the Project Directory**  
    Change your working directory to the project directory:
     ```bash
-    cd Music-Data-Display
+    cd spotify-app
     ```
 
 3. **Install Dependencies**  
@@ -56,7 +56,7 @@ The application uses Angular components and services to interact with the Spotif
 8. **Change Git Remote URL**  
     To avoid accidental pushes to the base project, change the Git remote URL:
     ```bash
-    git remote set-url origin https://github.com/yourusername/Music-Data-Display.git
+    git remote set-url origin https://github.com/yourusername/spotify-app.git
     git remote -v # confirm the changes
     ```
 
