@@ -1,6 +1,6 @@
 # Music Snippets in Angular
 
-## <a href="https://soundsnippets.netlify.app/newReleases" target="_blank">Live Demo</a>
+[Live Demo](https://soundsnippets.netlify.app/newReleases)
 
 ## Project Overview
 Music Snippets is a web application built using Angular that integrates with the Spotify API to fetch and display music data. Users can search for tracks, albums, and artists while exploring various music genres through a responsive and dynamic interface.
