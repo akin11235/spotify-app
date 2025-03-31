@@ -83,9 +83,9 @@ Prerequisites
 - **Angular Documentation**: [Angular Documentation](https://angular.io/docs)
 
 ## Future Enhancements
-🎛 User Authentication: Allow users to log in with their Spotify accounts.
-📌 Favorites & Playlists: Enable users to save favorite tracks and create playlists.
-🎨 Enhanced UI/UX: Implement animations and dark mode support.
+- 🎛 User Authentication: Allow users to log in with their Spotify accounts.
+- 📌 Favorites & Playlists: Enable users to save favorite tracks and create playlists.
+- 🎨 Enhanced UI/UX: Implement animations and dark mode support.
 
 ## Contributing
  Contributions are welcome! Feel free to submit issues or pull requests.
