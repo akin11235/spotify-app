@@ -5,11 +5,11 @@
 Music Snippets is a web application built using Angular that integrates with the Spotify API to fetch and display music data. Users can search for tracks, albums, and artists while exploring various music genres through a responsive and dynamic interface.
 
 ### Key Features
-- **🎵 Spotify API Integration: Fetches real-time music data from Spotify.
-- **🔍 Search Functionality: Users can search for their favorite tracks, albums, and artists.
-- **📄 Detailed View: Provides detailed information about selected music items.
-- **📱 Responsive Design: Optimized for different screen sizes and devices.
-- **⚡ Dynamic UI: Seamless and interactive user experience powered by Angular components.
+- 🎵 Spotify API Integration: Fetches real-time music data from Spotify.
+- 🔍 Search Functionality: Users can search for their favorite tracks, albums, and artists.
+- 📄 Detailed View: Provides detailed information about selected music items.
+- 📱 Responsive Design: Optimized for different screen sizes and devices.
+- ⚡ Dynamic UI: Seamless and interactive user experience powered by Angular components.
 
 ## Project Flow
 The application follows a structured flow:
@@ -88,7 +88,7 @@ Prerequisites
 🎨 Enhanced UI/UX: Implement animations and dark mode support.
 
 ## Contributing
-Contributions are welcome! Feel free to submit issues or pull requests.
+ Contributions are welcome! Feel free to submit issues or pull requests.
 ---
 
 Feel free to adjust the details as needed for your specific project setup!
